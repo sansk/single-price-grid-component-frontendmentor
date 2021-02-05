@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --brightyellow: hsl(71, 73%, 54%);
+
+  --lightgray: hsl(204, 43%, 93%);
+  --grayishblue: hsl(218, 22%, 67%);
+
+  --font-size: 16px;
+  --bold: 700;
+  --normal: 400;
+  --family: 'Karla', sans-serif;
+}
+
+html {
+  font-size: var(--font-size);
+  background-color: var(--lightgray);
+  font-family: var(--family);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  /* display: grid;
+  grid-template-columns: 50%; */
+  /* background-color: #ff8a32; */
+}
+
+main {
+  width: 50%;
+
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px var(--grayishblue);
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(50%, 1fr));
+  grid-template-areas:
+    'ctacontent ctacontent'
+    'pricing whyus';
+}
+
+main .cta-content {
+  background-color: #fff;
+  grid-area: ctacontent;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  padding: 2rem;
+}
+
+main .cta-content h3 {
+  color: var(--cyan);
+  font-weight: var(--bold);
+  line-height: 3rem;
+  font-size: 1.5rem;
+}
+
+main .cta-content p {
+  font-size: 1rem;
+  color: var(--grayishblue);
+  line-height: 1.5rem;
+}
+
+main .cta-content p.highlgt {
+  color: var(--brightyellow);
+  font-weight: var(--bold);
+  line-height: 3rem;
+}
+
+main .pricing {
+  background-color: hsl(179, 62%, 43%);
+  grid-area: pricing;
+
+  color: var(--lightgray);
+  text-align: left;
+  padding: 2.5rem;
+  line-height: 2rem;
+  border-bottom-left-radius: 10px;
+}
+
+main .pricing .sec-head,
+main .why-us .sec-head {
+  font-weight: var(--bold);
+  line-height: 3rem;
+  font-size: 1.25rem;
+}
+
+main .pricing .dollar {
+  font-weight: var(--bold);
+  font-size: 2rem;
+}
+
+main .pricing button {
+  width: 90%;
+  background-color: var(--brightyellow);
+  border: none;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: var(--bold);
+  font-size: 1rem;
+  box-shadow: 1px 1px 10px var(--grayishblue);
+}
+
+main .why-us {
+  background-color: hsla(179, 62%, 43%, 0.8);
+  grid-area: whyus;
+
+  text-align: left;
+  padding: 2.5rem;
+  color: var(--lightgray);
+  line-height: 1.5rem;
+  border-bottom-right-radius: 10px;
+}
+
+footer {
+  width: 50%;
+  text-align: center;
+}
+
+@media all and (max-width: 1200px) {
+  main {
+    width: 60%;
+  }
+}
+
+@media all and (max-width: 990px) {
+  main {
+    width: 80%;
+  }
+}
+
+@media all and (max-width: 680px) {
+  main {
+    width: 90%;
+  }
+}
+
+@media all and (max-width: 520px) {
+  main {
+    width: 85%;
+    grid-template-areas:
+      'ctacontent ctacontent'
+      'pricing pricing' 'whyus whyus';
+  }
+}
+/* To be deleted */
+/* main {
+  background-color: lightblue;
+}
+footer {
+  background-color: lightgrey;
+} */
